@@ -1,0 +1,61 @@
+# Build Folders
+bin/
+obj/
+Debug/
+Release/
+
+# Visual Studio temporary files
+.vs/
+
+# User-specific files
+*.user
+*.rsuser
+*.suo
+
+# Logs
+*.log
+
+# IDE Configuration Files
+.idea/
+*.sln.docstates
+
+# Packages
+packages/
+*.nupkg
+*.snupkg
+
+# Generated files
+*.Generated.cs
+Generated_Code/
+
+# Configuration files
+appsettings.*.json
+appsettings.json
+
+# Publish artifacts
+wwwroot/
+
+# Resharper
+_ReSharper*/
+*.DotSettings.user
+
+# Rider
+.idea/
+*.sln.iml
+
+# Mac specific files
+.DS_Store
+
+# NuGet
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Backup files
+*.bak
+*.swp
+*.tmp
+
+# Other
+*.pdb
+*.mdb
