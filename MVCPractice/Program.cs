@@ -1,11 +1,25 @@
+using Microsoft.EntityFrameworkCore;
+using MVCPractice.Data;
+using MVCPractice.Repositories;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+//Inject DBContext inside application services
+builder.Services.AddDbContext<MvcDbContext>(options =>
+options.UseSqlServer(builder.Configuration.GetConnectionString("DbConnectionString")));
+
+
+//Inject Itag Interface into services. If ItagRepository called instead give them the repository
+builder.Services.AddScoped<ITagRepository, TagRepository>();
+
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Middleware ----------------
+
+// Configure the HTTP request pipeline. Apps Middleware
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
@@ -23,5 +37,7 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+// Middleware ^ ----------------
 
 app.Run();
