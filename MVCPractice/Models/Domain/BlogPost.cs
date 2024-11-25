@@ -14,5 +14,7 @@ public class BlogPost
     public DateTime PublishedDate { get; set; }
     public required string Author { get; set; }
     public bool Visible { get; set; }
+
+    // Naviation Property
     public ICollection<Tag>? Tags { get; set; }
 }

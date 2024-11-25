@@ -14,6 +14,7 @@ options.UseSqlServer(builder.Configuration.GetConnectionString("DbConnectionStri
 
 //Inject Itag Interface into services. If ItagRepository called instead give them the repository
 builder.Services.AddScoped<ITagRepository, TagRepository>();
+builder.Services.AddScoped<IBlogPostRepository, BlogPostRepository>();
 
 var app = builder.Build();
 
